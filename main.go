@@ -1,7 +1,7 @@
 package main
 
 import (
-	"crowdsec/pkg/preinstallation"
+	"crowdsec/pkg/preinstall"
 	"fmt"
 	"os"
 )
