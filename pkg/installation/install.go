@@ -26,14 +26,13 @@ func Install() error {
 	}
 
 	//installation de crowdsec
-	cmd = exec.Command("sudo", "apt", "insttall", "-y", "crowdsec")
+	cmd = exec.Command("sudo", "apt", "install", "-y", "crowdsec")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	if err := cmd.Run(); err != nil {
 		return fmt.Errorf("erreur: %w", err)
 	}
-	
+
 	fmt.Println("OK")
 	return nil
 }
-
