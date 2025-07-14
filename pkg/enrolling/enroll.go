@@ -23,4 +23,5 @@ func Enroll() error {
 	}
 	fmt.Println("Enroll ok")
 	return nil
+
 }
