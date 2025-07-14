@@ -1,1 +1,1 @@
-# auto-crowdsec
+go run main.go

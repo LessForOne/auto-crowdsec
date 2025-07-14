@@ -1,7 +1,7 @@
 package main
 
 import (
-	"crowdsec/pkg/preinstall"
+	preinstall "auto-crowdsec/pkg/preinstallation"
 	"fmt"
 	"os"
 )
@@ -18,4 +18,3 @@ func main() {
 	fmt.Println("Crowdsec n'est pas dejé installé: ok")
 	fmt.Println("Tout est bon !")
 }
-
