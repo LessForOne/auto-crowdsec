@@ -12,7 +12,7 @@ func Enroll() error {
 	fmt.Scan(&enrollkey)
 	fmt.Println("Votre clé est: ", enrollkey)
 
-	cmd := exec.Command("sudo", "cscli", "console", "enroll", "-e", enrollkey)
+	cmd := exec.Command("sudo", "cscli", "console", "enroll", "-e", "context", enrollkey)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	cmd.Stdin = os.Stdin // pour le mot de passe sudo si besoin
