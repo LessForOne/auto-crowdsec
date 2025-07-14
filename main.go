@@ -1,6 +1,7 @@
 package main
 
 import (
+	"auto-crowdsec/pkg/enrolling"
 	install "auto-crowdsec/pkg/installation"
 	preinstall "auto-crowdsec/pkg/preinstallation"
 	"fmt"
@@ -20,6 +21,11 @@ func main() {
 	fmt.Println("Tout est bon !")
 
 	if err := install.Install(); err != nil {
+		fmt.Println("Erreur: ", err)
+		os.Exit(1)
+	}
+
+	if err := enrolling.Enroll(); err != nil {
 		fmt.Println("Erreur: ", err)
 		os.Exit(1)
 	}
