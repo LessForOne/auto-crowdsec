@@ -1,6 +1,7 @@
 package main
 
 import (
+	"auto-crowdsec/pkg/bouncer"
 	"auto-crowdsec/pkg/enrolling"
 	install "auto-crowdsec/pkg/installation"
 	preinstall "auto-crowdsec/pkg/preinstallation"
@@ -27,6 +28,16 @@ func main() {
 	}
 
 	if err := enrolling.Enroll(); err != nil {
+		fmt.Println("Erreur: ", err)
+		os.Exit(1)
+	}
+
+	if err := reboot.Reb(); err != nil {
+		fmt.Println("Erreur: ", err)
+		os.Exit(1)
+	}
+
+	if err := bouncer.Bouncer(); err != nil {
 		fmt.Println("Erreur: ", err)
 		os.Exit(1)
 	}
